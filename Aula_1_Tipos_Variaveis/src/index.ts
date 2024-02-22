@@ -23,7 +23,7 @@ valorQualquer = "abc";
 valorQualquer = true;
 
 // Tipo object para valores não primitivos
-let pessoaObjeto: object = { nome: "João", idade: 25 };
+let pessoaObjeto: object = { nome: "João", idade: 26 };
 
 // Tipo union para aceitar múltiplos tipos
 let nota: number | string = 10;
