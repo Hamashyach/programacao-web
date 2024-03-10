@@ -64,8 +64,8 @@ CalcularIdade(){
 }
 
 
-let carro = new Carro ("Porsche","Taycan GTS", "Rosa", 2021);
-carro.setcor = "Prata";
+let carro = new Carro ("Porsche","Taycan GTS", "Prata", 2021);
+carro.setcor = "Rosa";
 console.log(carro);
 
 // 2 – Desenvolva uma classe Calculadora em TypeScript
