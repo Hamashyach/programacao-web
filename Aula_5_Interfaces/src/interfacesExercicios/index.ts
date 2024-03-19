@@ -3,10 +3,10 @@ import { Ave } from "./ave";
 import { Animal } from "./animal";
 
 function verificarClasse (animal: Animal){
-    console.log animal.pelos();
-    console.log $animal.penas();
+    console.log (animal.pelos());
+    console.log (animal.penas());
     
 }
 
-let mamifero = new Mamifero ();
-let 
+let mamifero = new Mamifero ("Tigre");
+verificarClasse(mamifero);
