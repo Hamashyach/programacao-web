@@ -1,24 +1,28 @@
 import { Request, Response } from "express";
 import { ProductService } from "../service/ProductService";
-import {Controller, Route, Tags} from "tsoa"
+import {Controller, Route, Tags, Post, Body, Res,TsoaResponse} from "tsoa"
 import { ProductRequestDto } from "../model/dto/ProductRequestDto";
 import { BasicResponseDto } from "../model/dto/BasicResponseDto";
- export class ProductController{
+
+@Route('product')
+@Tags('Product')
+ export class ProductController extends Controller{
  productService = new ProductService();
 
- @Post()
- async cadastrarProduto (  
-    @Body() dto:ProductRequestDto,
-    @Res() fall: TsoaResponse<400, BasicResponseDto>,
-    @Res() sucess: TsoaResponse<201, BasicResponseDto>
- ): Promise<void>{
-    try{
-        const product = await this.productService.cadastrarProduto(dto);
-        return sucess(201, new BasicResponseDto("Produto criado com sucesso!", product));
+    @Post ()
+    async cadastrarProduto (  
+        @Body() dto: ProductRequestDto,
+        @Res() fall: TsoaResponse<400, BasicResponseDto>,
+        @Res() sucess: TsoaResponse<201, BasicResponseDto>
+    ): Promise<void>{
+        try{
+            const product = await this.productService.cadastrarProduto(dto);
+            return sucess(201, new BasicResponseDto("Produto criado com sucesso!", product));
 
     }catch (error: any){
         return fall(400, new BasicResponseDto(error.massage, undefined));
     }
+ }
 
  async  atualizarProduto (req: Request, res: Response){
     try {
@@ -76,4 +80,5 @@ import { BasicResponseDto } from "../model/dto/BasicResponseDto";
     }
 };
 
-};
+ };
+

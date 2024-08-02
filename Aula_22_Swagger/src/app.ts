@@ -1,5 +1,5 @@
 import express from 'express';
-import {RegisterRoutes} from ./route/routes;
+import {RegisterRoutes} from './route/routes';
 import { setupSwagger } from './config/swagger';
 
 const app = express();
