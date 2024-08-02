@@ -1,6 +1,6 @@
-import { stringParaData, verificaFormatoData } from "../util/DataUtil";
+import { stringParaData, verificaFormatoData } from "../../util/DataUtil";
 
-export class Product{
+export class Productentity{
     id: number;
     name: string;
     price: number;
