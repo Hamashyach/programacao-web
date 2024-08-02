@@ -11,7 +11,7 @@ function appLog(){
 }
 
 function hello(req: Request, res: Response){
-    res.status(201).json(mensagem,"Hello World"});
+    res.status(201).json(mensagem, "Hello World"});
 }
 
 app.get("/api/hello", hello);
